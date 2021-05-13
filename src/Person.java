@@ -38,18 +38,8 @@ public class Person implements Comparable<Person>{
         else if(this.age < person.age){
             return -1;
         }
-        else if (this.age == person.age){
-            if(this.height > person.height){
-                return 1;
-            }
-            else if(this.height < person.height){
-                return -1;
-            }
-            else{
-                return 0;
-            }
-        } else {
-            return 0;
+        else {
+            return Integer.compare(this.height, person.height);
         }
     }
 
@@ -70,7 +60,7 @@ class Sorter {
         Person p6 = new Person("Mark", 195,51);
         Person p7 = new Person("Sonja", 168,35);
 
-        ArrayList<Person> personList = new ArrayList<Person>(Arrays.asList(p1,p2,p3,p4,p5,p6,p7));
+        ArrayList<Person> personList = new ArrayList<>(Arrays.asList(p1, p2, p3, p4, p5, p6, p7));
         System.out.println("---Liste inden sortering---\n");
 
         for (Person person:personList){
